@@ -1,6 +1,11 @@
 
 import fs from "fs";
 import path from "path";
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 // Helper to append a log entry to logs.json
 function appendLog(entry) {
   const logPath = path.join(process.cwd(), "logs.json");
@@ -11,6 +16,21 @@ function appendLog(entry) {
   logs.push(entry);
   fs.writeFileSync(logPath, JSON.stringify(logs, null, 2));
 }
+
+// ...existing code...
+
+// Place logging middleware and endpoint after app is initialized
+// (Insert after 'const app = express();' and app.use(cors...), app.use(express.json());)
+
+dotenv.config();
+
+const app = express();
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
+app.use(express.json());
 
 // Middleware to catch errors and log them
 app.use((req, res, next) => {
@@ -45,15 +65,6 @@ app.get("/api/logs", (req, res) => {
   } catch {}
   res.json(logs);
 });
-
-dotenv.config();
-
-const app = express();
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
-app.use(express.json());
 
 const users = [];
 

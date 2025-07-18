@@ -1,0 +1,74 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader .title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardHeader .company, .cardHeader .location {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0.25rem 0 0;
+}
+
+.skillsContainer p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillTag {
+  background-color: #eef2ff;
+  color: #4338ca;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.cardActions {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.applyButton, .saveButton {
+  flex: 1;
+  padding: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid;
+  cursor: pointer;
+  text-align: center;
+}
+
+.applyButton {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.saveButton {
+  background-color: #fff;
+  color: #334155;
+  border-color: #cbd5e1;
+}

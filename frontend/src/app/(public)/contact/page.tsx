@@ -1,6 +1,10 @@
+import Image from "next/image";
 export default function ContactPage() {
   return (
     <main style={{maxWidth: 700, margin: '2rem auto', padding: '2rem'}}>
+      <div style={{textAlign: 'center', marginBottom: 32}}>
+        <Image src="/logo.png" alt="AI Recruit Logo" width={160} height={54} priority />
+      </div>
       <h1>Contact Us</h1>
       <p>Have questions or need support? Reach out and our team will get back to you promptly.</p>
       <form style={{margin: '2em 0', display: 'flex', flexDirection: 'column', gap: 16}}>

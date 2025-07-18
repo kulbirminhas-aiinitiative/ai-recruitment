@@ -1,0 +1,47 @@
+.section {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+
+.summaryBar {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #475569;
+}
+
+.filters {
+  margin-bottom: 1.5rem;
+}
+
+.filters label {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.filters select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}

@@ -1,0 +1,11 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.contentArea {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}

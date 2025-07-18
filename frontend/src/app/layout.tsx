@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LogProvider } from "./components/LogContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     title: "AI Recruitment Portal",
     description: "AI-powered recruitment and job search platform.",
     type: "website",
-    url: "https://aiinitiative.co.uk/", // Update to your domain
+    url: "https://aiinitiative.co.uk/",
     images: [
       {
         url: "/og-image.png",
@@ -44,17 +45,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-  <head>
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body className={`${geistSans.variable} ${geistMono.variable}`}>
-    {/* Header Navigation */}
-    {require('./components/Header').default()}
-    <main style={{minHeight: '70vh'}}>{children}</main>
-    {/* Footer */}
-    {require('./components/Footer').default()}
-  </body>
-</html>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <LogProvider>
+          {children}
+        </LogProvider>
+      </body>
+    </html>
   );
 }

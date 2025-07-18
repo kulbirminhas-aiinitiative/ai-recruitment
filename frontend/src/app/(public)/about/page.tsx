@@ -1,6 +1,10 @@
+import Image from "next/image";
 export default function AboutPage() {
   return (
     <main style={{maxWidth: 800, margin: '2rem auto', padding: '2rem'}}>
+      <div style={{textAlign: 'center', marginBottom: 32}}>
+        <Image src="/logo.png" alt="AI Recruit Logo" width={160} height={54} priority />
+      </div>
       <h1>About AI Recruitment Portal</h1>
       <p style={{fontSize: '1.1em', margin: '1.5em 0'}}>
         <b>AI Recruitment Portal</b> is dedicated to transforming the way candidates and employers connect, leveraging the power of artificial intelligence to streamline job search, application, and talent discovery.

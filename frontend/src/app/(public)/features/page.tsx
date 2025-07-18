@@ -1,6 +1,10 @@
+import Image from "next/image";
 export default function FeaturesPage() {
   return (
     <main style={{maxWidth: 900, margin: '2rem auto', padding: '2rem'}}>
+      <div style={{textAlign: 'center', marginBottom: 32}}>
+        <Image src="/logo.png" alt="AI Recruit Logo" width={160} height={54} priority />
+      </div>
       <h1>Platform Features</h1>
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32, marginTop: 32}}>
         <div>

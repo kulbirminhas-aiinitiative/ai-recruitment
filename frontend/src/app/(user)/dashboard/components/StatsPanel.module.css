@@ -1,0 +1,67 @@
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.chartWrapper {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chartWrapper h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.benchmarkCard {
+    background-color: #f0f9ff; /* light-sky-100 */
+    border: 1px solid #e0f2fe; /* light-sky-200 */
+    color: #0c4a6e; /* sky-900 */
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.benchmarkCard h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.benchmarkCard p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}

@@ -1,0 +1,119 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithIcon svg:first-child {
+  position: absolute;
+  left: 0.75rem;
+  color: #94a3b8;
+}
+
+.inputWithIcon input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 2.5rem; /* left padding for icon */
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.editIcon {
+  position: absolute;
+  right: 0.75rem;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.widgetCard {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.widgetCard h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.widgetCard p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.strengthMeter {
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  height: 24px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.strengthBar {
+  height: 100%;
+  background-color: #22c55e; /* green-500 */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: width 0.5s ease-in-out;
+}

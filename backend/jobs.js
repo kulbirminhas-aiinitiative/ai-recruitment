@@ -25,4 +25,21 @@ router.get("/:id", (req, res) => {
   res.json(job);
 });
 
+// POST /api/jobs (for demo only, no auth)
+router.post("/", (req, res) => {
+  const { title, company, location, description } = req.body;
+  if (!title || !company || !location || !description) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+  const newJob = {
+    id: jobs.length ? jobs[jobs.length - 1].id + 1 : 1,
+    title,
+    company,
+    location,
+    description
+  };
+  jobs.push(newJob);
+  res.status(201).json(newJob);
+});
+
 export default router;

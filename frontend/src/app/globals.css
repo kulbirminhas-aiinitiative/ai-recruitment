@@ -42,42 +42,51 @@ body {
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s, outline 0.2s;
 }
-a:hover, a:focus {
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+a:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
   color: var(--primary-hover);
   text-decoration: underline;
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], .button {
   background: var(--primary);
   color: #fff;
   border: none;
   border-radius: var(--radius);
-  padding: 0.6em 1.3em;
+  padding: 0.7em 1.4em;
   font-size: 1em;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, outline 0.2s;
 }
-button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+button:hover, .button:hover {
   background: var(--primary-hover);
+}
+button:focus, .button:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+  background: var(--primary-hover);
+  box-shadow: 0 0 0 2px #2563eb44;
 }
 
 input, textarea, select {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.6em;
+  padding: 0.7em;
   font-size: 1em;
-  margin-top: 0.2em;
-  margin-bottom: 0.8em;
-  width: 100%;
-  background: var(--card-bg);
-  color: var(--foreground);
-  transition: border 0.2s;
+  transition: border 0.2s, outline 0.2s;
 }
 input:focus, textarea:focus, select:focus {
-  outline: none;
   border-color: var(--primary);
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
 }
 
 form {

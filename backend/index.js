@@ -1,14 +1,70 @@
+
+import fs from "fs";
+import path from "path";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+// Helper to append a log entry to logs.json
+function appendLog(entry) {
+  const logPath = path.join(process.cwd(), "logs.json");
+  let logs = [];
+  try {
+    logs = JSON.parse(fs.readFileSync(logPath, "utf8"));
+  } catch {}
+  logs.push(entry);
+  fs.writeFileSync(logPath, JSON.stringify(logs, null, 2));
+}
+
+// ...existing code...
+
+// Place logging middleware and endpoint after app is initialized
+// (Insert after 'const app = express();' and app.use(cors...), app.use(express.json());)
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
 app.use(express.json());
+
+// Middleware to catch errors and log them
+app.use((req, res, next) => {
+  res.on("finish", () => {
+    if (res.statusCode >= 400) {
+      appendLog({
+        type: res.statusCode >= 500 ? "error" : "warn",
+        message: `${req.method} ${req.originalUrl} - ${res.statusCode}`,
+        timestamp: new Date().toLocaleString(),
+      });
+    }
+  });
+  next();
+});
+
+// Log unhandled errors
+app.use((err, req, res, next) => {
+  appendLog({
+    type: "error",
+    message: err.message || String(err),
+    timestamp: new Date().toLocaleString(),
+  });
+  res.status(500).json({ message: "Internal server error" });
+});
+
+// Endpoint to get logs
+app.get("/api/logs", (req, res) => {
+  const logPath = path.join(process.cwd(), "logs.json");
+  let logs = [];
+  try {
+    logs = JSON.parse(fs.readFileSync(logPath, "utf8"));
+  } catch {}
+  res.json(logs);
+});
 
 const users = [];
 

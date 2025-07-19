@@ -1,27 +1,30 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <h1>AI-Powered Recruitment Portal</h1>
-          <p>
-            Find your dream job or top talent with cutting-edge AI. Upload your CV, get instant feedback, and connect with the best opportunities.
-          </p>
-          <a className={styles.cta} href="/register">Get Started</a>
-        </div>
-        <div className={styles.heroImage}>
-          <Image src="/ai-recruitment-hero.svg" alt="AI Recruitment Illustration" width={380} height={320} priority />
-        </div>
-      </section>
+    <>
+      <Header />
+      <div className={styles.page}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <div className={styles.heroText}>
+            <h1>AI-Powered Recruitment Portal</h1>
+            <p>
+              Find your dream job or top talent with cutting-edge AI. Upload your CV, get instant feedback, and connect with the best opportunities.
+            </p>
+            <a className={styles.cta} href="/register">Get Started</a>
+          </div>
+          <div className={styles.heroImage}>
+            <Image src="/ai-recruitment-hero.svg" alt="AI Recruitment Illustration" width={380} height={320} priority />
+          </div>
+        </section>
 
-      {/* Feature Highlights */}
-      <section className={styles.features}>
-        <h2>Platform Features</h2>
-        <div className={styles.featureGrid}>
+        {/* Feature Highlights */}
+        <section className={styles.features}>
+          <h2>Platform Features</h2>
+          <div className={styles.featureGrid}>
           <div className={styles.featureCard}>
             <Image src="/cv-analysis.svg" alt="CV Analysis" width={56} height={56} />
             <h3>AI CV Analysis</h3>
@@ -119,6 +122,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
@@ -129,6 +133,7 @@ export default function Home() {
           <div className={styles.footerLinks}>
             <a href="/about">About</a>
             <a href="/features">Features</a>
+            <a href="/how-it-works">How It Works</a>
             <a href="/contact">Contact</a>
             <a href="/privacy-policy">Privacy</a>
             <a href="/terms-of-service">Terms</a>
@@ -149,7 +154,8 @@ export default function Home() {
           &copy; {new Date().getFullYear()} AI Initiative. All rights reserved.
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
-
+// ...existing code...
